@@ -64,6 +64,7 @@ function response = submitParts(conf, email, token, parts)
   submissionUrl = submissionUrl();
   params = {'jsonBody', body};
   [code, responseBody] = system(sprintf('echo jsonBody=%s | curl -k -X POST -d @- %s', body, submissionUrl));
+  
   response = loadjson(responseBody);
 end
 
